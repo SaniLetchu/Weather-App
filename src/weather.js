@@ -8,7 +8,7 @@ async function getWeatherData(locationinput) {
   try {
     // Fetch data from openWeatherMap
     const data = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${locationinput}&APPID=${apiKey}`,
+      `https://api.openweathermap.org/data/2.5/weather?q=${locationinput}&APPID=${apiKey}`,
       { mode: "cors" }
     );
     // Formats promise to a JSON object
@@ -24,7 +24,7 @@ async function getWeatherData(locationinput) {
     const { description } = dataJSON.weather[0];
     const { country } = dataJSON.sys;
     const { icon } = dataJSON.weather[0];
-    const iconURL = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+    const iconURL = `https://openweathermap.org/img/wn/${icon}@2x.png`;
     const date = new Date();
     const dateUTC = new Date(date.toUTCString().slice(0, -4));
     // Let's get local time
