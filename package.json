@@ -1,0 +1,33 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "Project: Weather App from Odin Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaniLetchu/Weather-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SaniLetchu/Weather-App/issues"
+  },
+  "homepage": "https://github.com/SaniLetchu/Weather-App#readme",
+  "devDependencies": {
+    "eslint": "^8.17.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "prettier": "2.6.2",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "date-fns": "^2.28.0"
+  }
+}

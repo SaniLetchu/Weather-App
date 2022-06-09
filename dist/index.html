@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <label class="toggle">
+      <input class="unitchange" type="checkbox" />
+      <span class="slider"></span>
+      <span class="labels" data-on="°F" data-off="°C"></span>
+    </label>
+    <div class="header">
+      <h1 class="location">
+        <span class="placename">Helsinki</span><span>, </span
+        ><span class="country">FI</span>
+      </h1>
+      <p class="date">Thursday 9th Jun 22</p>
+      <h2 class="time">22:31</h2>
+    </div>
+    <div class="content">
+      <div class="left">
+        <p class="temperature">
+          <span class="tempnumber">14</span><span class="tempunit"> °C</span>
+        </p>
+        <img
+          class="weatherimage"
+          src="http://openweathermap.org/img/wn/10d@2x.png"
+        />
+      </div>
+      <div class="main">
+        <input class="userinput" placeholder="Enter Location..." />
+        <p class="notfound">Location not found</p>
+      </div>
+      <div class="right">
+        <div class="descriptiondiv">
+          <p class="righttitle">Description</p>
+          <p class="righttext"><span class="description">Cloudy</span></p>
+        </div>
+        <div class="feelslikediv">
+          <p class="righttitle">Feels Like</p>
+          <p class="righttext">
+            <span class="feelslike">13</span><span class="tempunit"> °C</span>
+          </p>
+        </div>
+        <div class="humiditydiv">
+          <p class="righttitle">Humidity</p>
+          <p class="righttext">
+            <span class="humidity">82</span><span> %</span>
+          </p>
+        </div>
+        <div class="windspeeddiv">
+          <p class="righttitle">Wind Speed</p>
+          <p class="righttext">
+            <span class="windspeed">25.9</span><span> km/h</span>
+          </p>
+        </div>
+        <div class="pressurediv">
+          <p class="righttitle">Pressure</p>
+          <p class="righttext">
+            <span class="pressure">101325</span><span> Pa</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </body>
+</html>
