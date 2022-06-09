@@ -1,0 +1,249 @@
+@font-face {
+  font-family: font;
+  src: url(Peace\ Sans.otf);
+}
+
+* {
+  font-weight: 100;
+  font-family: font;
+}
+
+body {
+  transition: 0.2s;
+  min-height: max(100vh, 600px);
+  margin: 0;
+  background: url("./background1.jpg") rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: grid;
+  grid-template-rows: 1fr 3fr 1.4fr;
+}
+
+h1,
+h2 {
+  color: white;
+}
+
+h3,
+p {
+  color: white;
+}
+
+.location,
+.time {
+  text-align: center;
+}
+
+.location {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.country {
+  font-size: 40px;
+  font-weight: 100;
+}
+
+.userinput:focus {
+  transform: scale(1.1);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.date {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.time {
+  margin-top: 0;
+  font-size: 30px;
+}
+
+.header {
+  grid-area: 1 / 1 / 2 / -1;
+}
+
+.content {
+  grid-area: 2 / 1 / 3 / -1;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.temperature {
+  font-weight: bolder;
+  margin-top: 0;
+  font-size: max(6vw, 50px);
+  margin-bottom: 0;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+}
+
+.weatherimage {
+  width: 15vw;
+}
+
+.right {
+  display: grid;
+  grid-auto-rows: 1fr;
+  padding: 0;
+  padding-right: 4vw;
+}
+
+.right > div {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.right > div > p {
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+.righttitle {
+  font-size: min(4vw, 30px);
+}
+
+.righttext {
+  font-size: min(3vw, 20px);
+}
+
+.notfound {
+  transition: opacity 0.2s ease-out;
+  opacity: 0;
+  text-align: center;
+  font-size: 12px;
+  color: crimson;
+}
+
+.userinput {
+  transition: 0.2s;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  color: white;
+  font-size: min(3vw, 24px);
+  background: transparent;
+  border-bottom: 2px solid white;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.userinput::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer {
+  grid-area: 3 / 1 / 4 / -1;
+}
+
+/*Credit: https://www.tutorialstonight.com/css-toggle-switch-with-text.php*/
+
+.toggle {
+  --width: 80px;
+  --height: calc(var(--width) / 3);
+
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  display: inline-block;
+  width: var(--width);
+  height: var(--height);
+  border-radius: var(--height);
+  cursor: pointer;
+}
+
+.toggle input {
+  display: none;
+}
+
+.toggle .slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--height);
+  border: 2px solid #969696;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease-in-out;
+}
+
+.toggle .slider::before {
+  content: "";
+  position: absolute;
+  top: 2.5px;
+  left: 2px;
+  width: calc(var(--height) * 0.6);
+  height: calc(var(--height) * 0.6);
+  border-radius: calc(var(--height) / 2);
+  border: 3px solid #969696;
+  background-color: #dbdbdb;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease-in-out;
+}
+
+.toggle input:checked + .slider {
+  border-color: #2196f3;
+}
+
+.toggle input:checked + .slider::before {
+  border-color: #2196f3;
+  background-color: #c6e5ff;
+  transform: translateX(calc(var(--width) - var(--height)));
+}
+
+.toggle .labels {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #4d4d4d;
+  font-size: 12px;
+  font-family: sans-serif;
+  transition: all 0.4s ease-in-out;
+}
+
+.toggle .labels::after {
+  content: attr(data-off);
+  position: absolute;
+  right: 5px;
+  opacity: 1;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s ease-in-out;
+}
+
+.toggle .labels::before {
+  content: attr(data-on);
+  position: absolute;
+  left: 5px;
+  opacity: 0;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+  transition: all 0.4s ease-in-out;
+}
+
+.toggle input:checked ~ .labels::after {
+  opacity: 0;
+}
+
+.toggle input:checked ~ .labels::before {
+  opacity: 1;
+}
